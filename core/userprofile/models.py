@@ -6,8 +6,6 @@ from utils.models_util import TimeMerediem, States, RecruitmentSources
 from utils.models_util import Gender, Race, Ethnicity
 
 # Patient Info / User Profile
-
-
 class PatientInfo(models.Model):
     name_first = models.CharField(_("First Name"), max_length=50)
     name_middle = models.CharField(_("Middle Name"), max_length=50, blank=True)
