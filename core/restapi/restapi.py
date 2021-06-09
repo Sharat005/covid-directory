@@ -19,3 +19,6 @@ class ScreenViewset(viewsets.ModelViewSet):
         permissions.AllowAny
     ]
     serializer_class = ScreenSerializer
+    def perform_create(self, serializer):
+        print("------------------------", self.request.user)
+        serializer.save(owner=self.request.user)

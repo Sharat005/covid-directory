@@ -1,0 +1,23 @@
+{% extends 'ui/base.html' %} {% block content %}
+<div class="container">
+<div class="col-md-8">
+  <br />
+  <h4 style="color:#007bff">Add Patient Info</h4>
+  <br />
+  {% if result == 'success' %}
+  <div class="alert alert-success" role="alert">
+    Patient information added to the Directory.
+  </div>
+  {% endif %}
+  <form method="post">
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+    </table>
+    <div class="text-center">
+      <button type="submit" class="btn btn-success">Add Patient</button>
+    </div>
+  </form>
+</div>
+</div>
+{% endblock %}

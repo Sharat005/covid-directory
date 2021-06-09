@@ -1,7 +1,10 @@
 from django.db import models
 from django.utils.translation import gettext as _
 
-    
+
+def compute_eligibility(form):
+    print(form)
+    return True
 # Options for Yes/No questions
 class YesNo(models.IntegerChoices):
     NO = 0, _("No")

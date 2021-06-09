@@ -68,3 +68,6 @@ class PatientInfo(models.Model):
     created_at = models.DateTimeField(_("Created at:"), auto_now_add=True)
     class Meta:
         unique_together = (('name_first', 'name_last', 'dob', 'phone1'))
+
+    def __str__(self):
+        return '{} {}'.format(self.name_last, self.name_first)

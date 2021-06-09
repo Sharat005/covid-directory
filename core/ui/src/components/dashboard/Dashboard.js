@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
 
-import Screen from '../userforms/screen';
-import Userinfo from '../userforms/Userinfo';
+import AddUserinfo from '../userinfo/AddUserinfo';
+import Screen from '../screen/screen';
 
 export default function Dashboard() {
         return (
             <Fragment>
-                <Userinfo />
+                <Screen />
             </Fragment>
         )
 }
