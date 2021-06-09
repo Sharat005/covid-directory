@@ -51,7 +51,7 @@ class Screen(models.Model):
     screen_bph_yn = models.IntegerField(
         _("Do you have Benign Prostatic Hyperplasia (BPH)?"), choices=YesNo.choices, null=True, blank=True)
     screen_treatment_bph_yn = models.IntegerField(
-        _("Do you have Benign Prostatic Hyperplasia (BPH)?"), choices=YesNo.choices, null=True, blank=True)
+        _("Are you on stable treatment for BPH?"), choices=YesNo.choices, null=True, blank=True)
     screen_comments = models.CharField(
         _("Any other information would you like to provide."), max_length=300, blank=True)
     created_at = models.DateTimeField(_("Created At"), auto_now_add=True)

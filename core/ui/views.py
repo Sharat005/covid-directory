@@ -1,8 +1,9 @@
 from django.http.response import HttpResponseRedirect
 from django.shortcuts import render
 
-from .forms import PatientInfoForm, ScreenForm
+from .forms import PatientInfoForm, ScreenForm, ZipForm
 from utils.models_util import compute_eligibility
+from utils.dashboard_util import get_dashboard_stats, fetch_data_for_zip
 
 # Create your views here.
 def react(request):
@@ -32,8 +33,17 @@ def screen(request):
     return render(request, 'ui/screen.html', {'form': form})
 
 def dashboard(request):
-    return render(request, 'ui/dash.html', {})
+    stats = get_dashboard_stats()    
+    return render(request, 'ui/dash.html', {'data': stats})
 
     
 def zip_analytics(request):
-    return render(request, 'ui/zip_analytics.html', {})
+    if request.method == "POST":
+        form = ZipForm(request.POST)
+        if form.is_valid():
+            data, summary = fetch_data_for_zip(form)
+            return render(request, 'ui/zipanalytics.html', {'form': form, 'data': data, 'summary': summary, 'zipcode':form.cleaned_data['zipcode']})
+    else:
+        form = ZipForm()
+
+    return render(request, 'ui/zipanalytics.html', {'form':form})

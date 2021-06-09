@@ -4,6 +4,16 @@
 <br />
   <h4 style="color:#007bff">Eligibility Screening</h4>
   <br />
+  {% if status == 'eligible' %}
+  <div class="alert alert-success" role="alert">
+    Status: Eligible. Participant Eligible for the Study.
+  </div>
+  {% endif %}
+  {% if status == 'not_eligible' %}
+  <div class="alert alert-danger" role="alert">
+    Sorry, you are not eligibile for the Study.
+  </div>
+  {% endif %}
   <form method="post">
     {% csrf_token %}
     <table>

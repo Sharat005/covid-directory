@@ -1,10 +1,19 @@
 from django.db import models
 from django.utils.translation import gettext as _
 
-
 def compute_eligibility(form):
-    print(form)
-    return True
+    data = form.cleaned_data
+    # User is ineligible if meets any of the following criteria
+    if(data['screen_smoking_yn'] == 0 or 
+        data['screen_smoking_amount'] or 
+        data['screen_diabetes_yn'] == 1 or
+        data['screen_lungcancer_yn'] == 1 or
+        data['screen_hx_atrialfibrillation_yn'] == 1 or 
+        data['screen_dx_additional_yn'] == 1 or 
+        data['screen_treatment_bph_yn'] == 0):
+        return "not_eligible"
+    return "eligible"
+    
 # Options for Yes/No questions
 class YesNo(models.IntegerChoices):
     NO = 0, _("No")

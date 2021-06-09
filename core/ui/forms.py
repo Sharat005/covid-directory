@@ -1,7 +1,8 @@
-from screen.models import Screen
 from django.forms import ModelForm
-from userprofile.models import PatientInfo
+from django import forms
 from django.core.exceptions import ValidationError
+from screen.models import Screen
+from userprofile.models import PatientInfo
 
 class PatientInfoForm(ModelForm):
     def __init__(self, *args, **kwargs):
@@ -28,3 +29,6 @@ class ScreenForm(ModelForm):
     class Meta:
         model = Screen
         fields = '__all__'
+
+class ZipForm(forms.Form):
+    zipcode = forms.IntegerField(label="Zipcode", required=True)

@@ -43,7 +43,9 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'rest_framework',
     'ui',
-    'crispy_forms'
+    'crispy_forms',
+    'zipanalytics',
+    'django_extensions',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
