@@ -45,13 +45,15 @@ Designed in a way that the codebase can be easily extended and additional featur
 
 ## Screenshots
 
-<img src="images/dashboard.png" alt="Dasboard" width="200">
+<img src="images/dashboard.PNG" alt="Dasboard" width="500">
 
-<img src="images/zipcode.png" width="200" alt="Summary based on Zipcode">
+<img src="images/zipcode.PNG" width="500" alt="Summary based on Zipcode">
 
-<img src="images/addpatient_success.png" width="200" alt="Success message after adding patient info">
+<img src="images/addpatient_success.png" width="500" alt="Success message after adding patient info">
 
 ## Additional Information
 If you have any additional questions, feedbacks, suggestions or recommendations, feel free to contact me through [Email](mailto:connectwith@laxmena.com) or [LinkedIn](https://www.linkedin.com/in/lakshmanan-meiyappan).
 
 Visit my blog here: [https://laxmena.com](https://laxmena.com).
+
+![](https://komarev.com/ghpvc/?username=laxmena-covid-directory&style=flat-square&color=blueviolet&label=Views)
