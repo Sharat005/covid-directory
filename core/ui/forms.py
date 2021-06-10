@@ -17,7 +17,7 @@ class ScreenForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super(ScreenForm, self).__init__(*args, **kwargs)
 
-    def clean(slef):
+    def clean(self):
         cleaned_data = super().clean()
         patient = cleaned_data.get('patient')
         count = Screen.objects.filter(patient=patient.id).count()
@@ -25,7 +25,7 @@ class ScreenForm(ModelForm):
             raise ValidationError(
                 "Sorry, you can only check your eligibility 3 times."
             )
-
+        
     class Meta:
         model = Screen
         fields = '__all__'

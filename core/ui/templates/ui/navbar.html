@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
   <a class="navbar-brand" href="{% url 'dashboard' %}">
-    <img src="http://breathechicago.uic.edu/wp-content/uploads/2014/08/HEADER_logo.png" max-width="100%" height="auto" class="d-inline-block align-top" alt="" loading="lazy">
+    Covid-Directory
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -8,22 +8,17 @@
   <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link {% if '/dashboard' in request.path %} active {% endif %}" href="{% url 'dashboard' %}">Dashboard</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link {% if '/patientinfo' in request.path %} active {% endif %}" href="{% url 'patientinfo' %}">PatientInfo <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link {% if '/screen' in request.path %} active {% endif %}" href="{% url 'screen' %}">Screening</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {% if '/zip' in request.path %} active {% endif %}" href="{% url 'zip' %}">Zipcode Stats</a>
+            </li>
         </ul>
 
         <ul class="navbar-nav my-2 my-lg-0">
-
-            <li class="nav-item">
-                <a class="nav-link" target="_blank" href="https://breathechicago.uic.edu/about-us/">About BCC</a>
-            </li>
-
             <li class="nav-item">
                 <a class="nav-link" target="_blank" href="/admin">Login</a>
             </li>
